@@ -1,0 +1,176 @@
+:root {
+    --text-color:#828282;
+    --border-color:#e0e0e0;
+    --primary-color:#2f80ed;
+}
+
+* {
+    box-sizing: border-box;
+    font:inherit;
+    color:inherit;
+}
+
+html,body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    color:#222;
+    height: 100%;
+    background-image: url('img/fall.jpeg');
+    background-size: cover;
+}
+
+p{
+    max-width: 600px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding:24px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    align-items: center;
+    gap:24px;
+    height: 100%;
+}
+
+.logo-container {
+    grid-column: 1/5;
+}
+
+.panel-container {
+    grid-column: 6/12;
+}
+
+.panel {
+    background-color: white;
+    padding: 40px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.panel-heading {
+    font-weight: 700;
+    font-size:24px;
+    margin:0;
+}
+
+.panel-subheading {
+    font-size: 12px;
+    margin:0;
+    color:var(--text-color);
+    margin-top: 8px;
+    margin-bottom: 28px;
+}
+.input  {
+    margin-bottom: 20px;
+    position: relative;
+
+}
+
+.input label {
+    font-size: 12px;
+    color:var(--text-color);
+    display: block;   
+}
+
+.input input {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    outline: none;
+    padding:0;
+    height: 28px;
+}
+
+.input-indicator {
+position: absolute;
+left:0;
+bottom:0;
+height: 2px;
+width: 100%;
+
+}
+
+.input input:focus ~ .input-indicator {
+    background-color: var(--primary-color);
+}
+
+.name {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+}
+
+.date-of-birth-heading {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin:0;
+    margin-bottom: 12px;
+}
+
+.dropdown label {
+    font-size: 12px;
+    color:var(--text-color);
+    display: block;   
+}
+
+.dropdown select {
+    width:100%;
+    border:none;
+    border-bottom: 1px solid var(--border-color);
+    height:28px;
+    padding: 0;
+
+}
+
+.date-of-birth-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:12px;
+}
+
+.consent {
+    font-size: 12px;
+    color: var(--text-color);
+    margin:0;
+    padding: 0;
+    margin-bottom: 48px;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: var(--primary-color);
+    padding:8px 24px;
+    border-radius: 9px;
+    color: white;
+}
+
+@media (max-width:700px) {
+    #container {
+        grid-template-rows: auto 1fr;
+   
+      }
+
+    .logo-container {
+        grid-column: 6;
+    }
+
+    .panel-container {
+        grid-column: 1/-1;
+    }
+
+    .name {
+grid-template-columns: 1fr;
+gap: 0;
+    }
+}
